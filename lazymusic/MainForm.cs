@@ -171,19 +171,24 @@ namespace Cool_Stuff {
         }
 
         private void lstBands_DoubleClick (object sender, EventArgs e) {
-            MessageBox.Show(lstBands.SelectedValue.ToString());
+            GoogleBand();
         }
 
-        private void button1_Click (object sender, EventArgs e) {
-            GoogleSong();
+        private void GoogleBand () {
+            string bandName = lstBands.GetItemText(lstBands.SelectedItem).TrimEnd();
+            Google(bandName);
         }
 
         private void GoogleSong () {
             string bandName = lstBands.GetItemText(lstBands.SelectedItem).TrimEnd();
             string songName = lstSongs.GetItemText(lstSongs.SelectedItem).TrimEnd();
 
+            Google(bandName + " " + songName);
+        }
+
+        private void Google (string searchString) {
             System.Diagnostics.Process.Start(
-                "https://www.google.com/#safe=active&q=" + bandName + " " + songName
+                "https://www.google.com/#safe=active&q=" + searchString
             );
         }
 
@@ -192,6 +197,14 @@ namespace Cool_Stuff {
         }
 
         private void btnDeleteBand_Click (object sender, EventArgs e) {
+            DeleteSelectedBand();
+        }
+
+        private void btnDeleteSong_Click (object sender, EventArgs e) {
+            DeleteSelectedSong();
+        }
+
+        private void DeleteSelectedBand () {
             DialogResult result = MessageBox.Show(
                 "Are you sure you wanna delete that band?",
                 "Confirm Band Deletion",
@@ -199,7 +212,7 @@ namespace Cool_Stuff {
                 MessageBoxIcon.Information
             );
 
-            if (result == DialogResult.No) {
+            if (result != DialogResult.Yes) {
                 return;
             }
 
@@ -215,10 +228,6 @@ namespace Cool_Stuff {
             PopulateBands();
         }
 
-        private void btnDeleteSong_Click (object sender, EventArgs e) {
-            DeleteSelectedSong();
-        }
-
         private void DeleteSelectedSong () {
             DialogResult result = MessageBox.Show(
                 "Are you sure you wanna delete that song?",
@@ -227,7 +236,7 @@ namespace Cool_Stuff {
                 MessageBoxIcon.Information
             );
 
-            if (result == DialogResult.No) {
+            if (result != DialogResult.Yes) {
                 return;
             }
 
@@ -260,6 +269,14 @@ namespace Cool_Stuff {
 
         private void lstSongs_KeyDown (object sender, KeyEventArgs e) {
             GoogleSong();
+        }
+
+        private void btnGoogleSong_Click (object sender, EventArgs e) {
+            GoogleSong();
+        }
+
+        private void btnGoogleBand_Click (object sender, EventArgs e) {
+            GoogleBand();
         }
     }
 }

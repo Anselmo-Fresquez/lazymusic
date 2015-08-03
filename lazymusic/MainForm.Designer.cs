@@ -23,7 +23,6 @@
         /// the contents of this method with the code editor.
         /// </summary>
         private void InitializeComponent () {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainForm));
             this.lstBands = new System.Windows.Forms.ListBox();
             this.lblBands = new System.Windows.Forms.Label();
             this.lstSongs = new System.Windows.Forms.ListBox();
@@ -38,24 +37,25 @@
             this.txtSongName = new System.Windows.Forms.TextBox();
             this.btnDeleteBand = new System.Windows.Forms.Button();
             this.btnRename = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
+            this.btnGoogleBand = new System.Windows.Forms.Button();
             this.btnGoogleSong = new System.Windows.Forms.Button();
             this.btnRenameSong = new System.Windows.Forms.Button();
             this.btnDeleteSong = new System.Windows.Forms.Button();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // lstBands
             // 
+            this.lstBands.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.lstBands.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.lstBands.Font = new System.Drawing.Font("Lucida Console", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lstBands.ForeColor = System.Drawing.Color.White;
             this.lstBands.FormattingEnabled = true;
-            this.lstBands.ItemHeight = 16;
+            this.lstBands.ItemHeight = 20;
             this.lstBands.Location = new System.Drawing.Point(13, 157);
             this.lstBands.Name = "lstBands";
-            this.lstBands.Size = new System.Drawing.Size(418, 306);
+            this.lstBands.Size = new System.Drawing.Size(418, 302);
             this.lstBands.TabIndex = 0;
             this.lstBands.SelectedIndexChanged += new System.EventHandler(this.lstBands_SelectedIndexChanged);
             this.lstBands.DoubleClick += new System.EventHandler(this.lstBands_DoubleClick);
@@ -72,12 +72,15 @@
             // 
             // lstSongs
             // 
+            this.lstSongs.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.lstSongs.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.lstSongs.Font = new System.Drawing.Font("Lucida Console", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lstSongs.ForeColor = System.Drawing.Color.White;
             this.lstSongs.FormattingEnabled = true;
-            this.lstSongs.ItemHeight = 16;
+            this.lstSongs.ItemHeight = 20;
             this.lstSongs.Location = new System.Drawing.Point(514, 157);
             this.lstSongs.Name = "lstSongs";
-            this.lstSongs.Size = new System.Drawing.Size(418, 306);
+            this.lstSongs.Size = new System.Drawing.Size(418, 302);
             this.lstSongs.TabIndex = 2;
             this.lstSongs.SelectedIndexChanged += new System.EventHandler(this.lstSongs_SelectedIndexChanged);
             this.lstSongs.KeyDown += new System.Windows.Forms.KeyEventHandler(this.lstSongs_KeyDown);
@@ -93,6 +96,9 @@
             // 
             // txtBandName
             // 
+            this.txtBandName.BackColor = System.Drawing.Color.MediumTurquoise;
+            this.txtBandName.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.txtBandName.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.txtBandName.Location = new System.Drawing.Point(101, 83);
             this.txtBandName.Name = "txtBandName";
             this.txtBandName.Size = new System.Drawing.Size(333, 22);
@@ -110,9 +116,11 @@
             // 
             // btnAddBandName
             // 
-            this.btnAddBandName.BackColor = System.Drawing.Color.White;
+            this.btnAddBandName.BackColor = System.Drawing.Color.MediumTurquoise;
+            this.btnAddBandName.FlatAppearance.BorderColor = System.Drawing.Color.Teal;
+            this.btnAddBandName.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnAddBandName.Font = new System.Drawing.Font("Impact", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnAddBandName.ForeColor = System.Drawing.Color.Black;
+            this.btnAddBandName.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.btnAddBandName.Location = new System.Drawing.Point(329, 111);
             this.btnAddBandName.Name = "btnAddBandName";
             this.btnAddBandName.Size = new System.Drawing.Size(103, 40);
@@ -123,9 +131,11 @@
             // 
             // btnClearBandName
             // 
-            this.btnClearBandName.BackColor = System.Drawing.Color.White;
+            this.btnClearBandName.BackColor = System.Drawing.Color.MediumTurquoise;
+            this.btnClearBandName.FlatAppearance.BorderColor = System.Drawing.Color.Teal;
+            this.btnClearBandName.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnClearBandName.Font = new System.Drawing.Font("Impact", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnClearBandName.ForeColor = System.Drawing.Color.Black;
+            this.btnClearBandName.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.btnClearBandName.Location = new System.Drawing.Point(218, 111);
             this.btnClearBandName.Name = "btnClearBandName";
             this.btnClearBandName.Size = new System.Drawing.Size(105, 40);
@@ -136,9 +146,11 @@
             // 
             // btnClearSongName
             // 
-            this.btnClearSongName.BackColor = System.Drawing.Color.White;
+            this.btnClearSongName.BackColor = System.Drawing.Color.MediumTurquoise;
+            this.btnClearSongName.FlatAppearance.BorderColor = System.Drawing.Color.Teal;
+            this.btnClearSongName.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnClearSongName.Font = new System.Drawing.Font("Impact", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnClearSongName.ForeColor = System.Drawing.Color.Black;
+            this.btnClearSongName.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.btnClearSongName.Location = new System.Drawing.Point(732, 111);
             this.btnClearSongName.Name = "btnClearSongName";
             this.btnClearSongName.Size = new System.Drawing.Size(96, 40);
@@ -149,9 +161,11 @@
             // 
             // btnAddSongTitle
             // 
-            this.btnAddSongTitle.BackColor = System.Drawing.Color.White;
+            this.btnAddSongTitle.BackColor = System.Drawing.Color.MediumTurquoise;
+            this.btnAddSongTitle.FlatAppearance.BorderColor = System.Drawing.Color.Teal;
+            this.btnAddSongTitle.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnAddSongTitle.Font = new System.Drawing.Font("Impact", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnAddSongTitle.ForeColor = System.Drawing.Color.Black;
+            this.btnAddSongTitle.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.btnAddSongTitle.Location = new System.Drawing.Point(834, 111);
             this.btnAddSongTitle.Name = "btnAddSongTitle";
             this.btnAddSongTitle.Size = new System.Drawing.Size(99, 40);
@@ -172,6 +186,9 @@
             // 
             // txtSongName
             // 
+            this.txtSongName.BackColor = System.Drawing.Color.MediumTurquoise;
+            this.txtSongName.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.txtSongName.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.txtSongName.Location = new System.Drawing.Point(598, 83);
             this.txtSongName.Name = "txtSongName";
             this.txtSongName.Size = new System.Drawing.Size(335, 22);
@@ -181,9 +198,11 @@
             // 
             // btnDeleteBand
             // 
-            this.btnDeleteBand.BackColor = System.Drawing.Color.White;
+            this.btnDeleteBand.BackColor = System.Drawing.Color.MediumTurquoise;
+            this.btnDeleteBand.FlatAppearance.BorderColor = System.Drawing.Color.Teal;
+            this.btnDeleteBand.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnDeleteBand.Font = new System.Drawing.Font("Impact", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnDeleteBand.ForeColor = System.Drawing.Color.Black;
+            this.btnDeleteBand.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.btnDeleteBand.Location = new System.Drawing.Point(13, 471);
             this.btnDeleteBand.Name = "btnDeleteBand";
             this.btnDeleteBand.Size = new System.Drawing.Size(135, 43);
@@ -194,9 +213,11 @@
             // 
             // btnRename
             // 
-            this.btnRename.BackColor = System.Drawing.Color.White;
+            this.btnRename.BackColor = System.Drawing.Color.MediumTurquoise;
+            this.btnRename.FlatAppearance.BorderColor = System.Drawing.Color.Teal;
+            this.btnRename.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnRename.Font = new System.Drawing.Font("Impact", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnRename.ForeColor = System.Drawing.Color.Black;
+            this.btnRename.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.btnRename.Location = new System.Drawing.Point(155, 472);
             this.btnRename.Name = "btnRename";
             this.btnRename.Size = new System.Drawing.Size(135, 42);
@@ -205,36 +226,43 @@
             this.btnRename.UseVisualStyleBackColor = false;
             this.btnRename.Click += new System.EventHandler(this.btnRename_Click);
             // 
-            // button2
+            // btnGoogleBand
             // 
-            this.button2.BackColor = System.Drawing.Color.White;
-            this.button2.Font = new System.Drawing.Font("Impact", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button2.ForeColor = System.Drawing.Color.Black;
-            this.button2.Location = new System.Drawing.Point(296, 471);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(135, 42);
-            this.button2.TabIndex = 17;
-            this.button2.Text = "Google";
-            this.button2.UseVisualStyleBackColor = false;
+            this.btnGoogleBand.BackColor = System.Drawing.Color.MediumTurquoise;
+            this.btnGoogleBand.FlatAppearance.BorderColor = System.Drawing.Color.Teal;
+            this.btnGoogleBand.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnGoogleBand.Font = new System.Drawing.Font("Impact", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnGoogleBand.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.btnGoogleBand.Location = new System.Drawing.Point(296, 471);
+            this.btnGoogleBand.Name = "btnGoogleBand";
+            this.btnGoogleBand.Size = new System.Drawing.Size(135, 42);
+            this.btnGoogleBand.TabIndex = 17;
+            this.btnGoogleBand.Text = "Google";
+            this.btnGoogleBand.UseVisualStyleBackColor = false;
+            this.btnGoogleBand.Click += new System.EventHandler(this.btnGoogleBand_Click);
             // 
             // btnGoogleSong
             // 
-            this.btnGoogleSong.BackColor = System.Drawing.Color.White;
+            this.btnGoogleSong.BackColor = System.Drawing.Color.MediumTurquoise;
+            this.btnGoogleSong.FlatAppearance.BorderColor = System.Drawing.Color.Teal;
+            this.btnGoogleSong.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnGoogleSong.Font = new System.Drawing.Font("Impact", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnGoogleSong.ForeColor = System.Drawing.Color.Black;
+            this.btnGoogleSong.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.btnGoogleSong.Location = new System.Drawing.Point(798, 471);
             this.btnGoogleSong.Name = "btnGoogleSong";
             this.btnGoogleSong.Size = new System.Drawing.Size(135, 42);
             this.btnGoogleSong.TabIndex = 20;
             this.btnGoogleSong.Text = "Google";
             this.btnGoogleSong.UseVisualStyleBackColor = false;
-            this.btnGoogleSong.Click += new System.EventHandler(this.button1_Click);
+            this.btnGoogleSong.Click += new System.EventHandler(this.btnGoogleSong_Click);
             // 
             // btnRenameSong
             // 
-            this.btnRenameSong.BackColor = System.Drawing.Color.White;
+            this.btnRenameSong.BackColor = System.Drawing.Color.MediumTurquoise;
+            this.btnRenameSong.FlatAppearance.BorderColor = System.Drawing.Color.Teal;
+            this.btnRenameSong.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnRenameSong.Font = new System.Drawing.Font("Impact", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnRenameSong.ForeColor = System.Drawing.Color.Black;
+            this.btnRenameSong.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.btnRenameSong.Location = new System.Drawing.Point(657, 472);
             this.btnRenameSong.Name = "btnRenameSong";
             this.btnRenameSong.Size = new System.Drawing.Size(135, 42);
@@ -245,9 +273,11 @@
             // 
             // btnDeleteSong
             // 
-            this.btnDeleteSong.BackColor = System.Drawing.Color.White;
+            this.btnDeleteSong.BackColor = System.Drawing.Color.MediumTurquoise;
+            this.btnDeleteSong.FlatAppearance.BorderColor = System.Drawing.Color.Teal;
+            this.btnDeleteSong.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnDeleteSong.Font = new System.Drawing.Font("Impact", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnDeleteSong.ForeColor = System.Drawing.Color.Black;
+            this.btnDeleteSong.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.btnDeleteSong.Location = new System.Drawing.Point(515, 471);
             this.btnDeleteSong.Name = "btnDeleteSong";
             this.btnDeleteSong.Size = new System.Drawing.Size(135, 43);
@@ -256,25 +286,15 @@
             this.btnDeleteSong.UseVisualStyleBackColor = false;
             this.btnDeleteSong.Click += new System.EventHandler(this.btnDeleteSong_Click);
             // 
-            // pictureBox1
-            // 
-            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
-            this.pictureBox1.Location = new System.Drawing.Point(438, 261);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(70, 64);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox1.TabIndex = 21;
-            this.pictureBox1.TabStop = false;
-            // 
             // label1
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Comic Sans MS", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(165, 9);
+            this.label1.Location = new System.Drawing.Point(369, 9);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(616, 56);
+            this.label1.Size = new System.Drawing.Size(213, 56);
             this.label1.TabIndex = 22;
-            this.label1.Text = "i\'m too lazy to search for music";
+            this.label1.Text = "lazy music";
             // 
             // label2
             // 
@@ -290,14 +310,14 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(120F, 120F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Dpi;
-            this.BackColor = System.Drawing.Color.White;
+            this.BackColor = System.Drawing.Color.LightSeaGreen;
+            this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(953, 532);
             this.Controls.Add(this.label1);
-            this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.btnGoogleSong);
             this.Controls.Add(this.btnRenameSong);
             this.Controls.Add(this.btnDeleteSong);
-            this.Controls.Add(this.button2);
+            this.Controls.Add(this.btnGoogleBand);
             this.Controls.Add(this.btnRename);
             this.Controls.Add(this.btnDeleteBand);
             this.Controls.Add(this.btnClearSongName);
@@ -313,10 +333,13 @@
             this.Controls.Add(this.lblSongs);
             this.Controls.Add(this.lblBands);
             this.Controls.Add(this.lstBands);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
             this.Name = "MainForm";
-            this.Text = "i\'m too lazy to search for music";
+            this.Opacity = 0.975D;
+            this.ShowIcon = false;
+            this.SizeGripStyle = System.Windows.Forms.SizeGripStyle.Hide;
+            this.Text = "lazy music";
             this.Load += new System.EventHandler(this.MainForm_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -338,11 +361,10 @@
         private System.Windows.Forms.TextBox txtSongName;
         private System.Windows.Forms.Button btnDeleteBand;
         private System.Windows.Forms.Button btnRename;
-        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Button btnGoogleBand;
         private System.Windows.Forms.Button btnGoogleSong;
         private System.Windows.Forms.Button btnRenameSong;
         private System.Windows.Forms.Button btnDeleteSong;
-        private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
     }
