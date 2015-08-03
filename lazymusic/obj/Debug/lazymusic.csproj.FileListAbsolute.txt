@@ -1,0 +1,14 @@
+C:\Users\Anselmo Fresquez\Documents\Visual Studio 2013\Projects\Cool Stuff\Cool Stuff\bin\Debug\Cool Stuff.exe.config
+C:\Users\Anselmo Fresquez\Documents\Visual Studio 2013\Projects\Cool Stuff\Cool Stuff\obj\Debug\Cool Stuff.exe
+C:\Users\Anselmo Fresquez\Documents\Visual Studio 2013\Projects\Cool Stuff\Cool Stuff\obj\Debug\Cool Stuff.pdb
+C:\Users\Anselmo Fresquez\Documents\Visual Studio 2013\Projects\Cool Stuff\lazymusic\bin\Debug\Cool Stuff.exe.config
+C:\Users\Anselmo Fresquez\Documents\Visual Studio 2013\Projects\Cool Stuff\lazymusic\obj\Debug\Cool Stuff.exe
+C:\Users\Anselmo Fresquez\Documents\Visual Studio 2013\Projects\Cool Stuff\lazymusic\obj\Debug\Cool Stuff.pdb
+C:\Users\Anselmo Fresquez\Documents\Visual Studio 2013\Projects\Cool Stuff\lazymusic\bin\Debug\Stuff.mdf
+C:\Users\Anselmo Fresquez\Documents\Visual Studio 2013\Projects\Cool Stuff\lazymusic\bin\Debug\Stuff_log.ldf
+C:\Users\Anselmo Fresquez\Documents\Visual Studio 2013\Projects\Cool Stuff\lazymusic\bin\Debug\Cool Stuff.exe
+C:\Users\Anselmo Fresquez\Documents\Visual Studio 2013\Projects\Cool Stuff\lazymusic\bin\Debug\Cool Stuff.pdb
+C:\Users\Anselmo Fresquez\Documents\Visual Studio 2013\Projects\Cool Stuff\lazymusic\obj\Debug\lazymusic.csprojResolveAssemblyReference.cache
+C:\Users\Anselmo Fresquez\Documents\Visual Studio 2013\Projects\Cool Stuff\lazymusic\obj\Debug\Cool_Stuff.MainForm.resources
+C:\Users\Anselmo Fresquez\Documents\Visual Studio 2013\Projects\Cool Stuff\lazymusic\obj\Debug\Cool_Stuff.Properties.Resources.resources
+C:\Users\Anselmo Fresquez\Documents\Visual Studio 2013\Projects\Cool Stuff\lazymusic\obj\Debug\lazymusic.csproj.GenerateResource.Cache

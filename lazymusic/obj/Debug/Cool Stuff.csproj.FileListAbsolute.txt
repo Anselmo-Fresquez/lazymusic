@@ -1,0 +1,11 @@
+c:\users\anselmo fresquez\documents\visual studio 2013\Projects\Cool Stuff\Cool Stuff\bin\Debug\Cool Stuff.exe.config
+c:\users\anselmo fresquez\documents\visual studio 2013\Projects\Cool Stuff\Cool Stuff\bin\Debug\Stuff.mdf
+c:\users\anselmo fresquez\documents\visual studio 2013\Projects\Cool Stuff\Cool Stuff\bin\Debug\Stuff_log.ldf
+c:\users\anselmo fresquez\documents\visual studio 2013\Projects\Cool Stuff\Cool Stuff\bin\Debug\Cool Stuff.exe
+c:\users\anselmo fresquez\documents\visual studio 2013\Projects\Cool Stuff\Cool Stuff\bin\Debug\Cool Stuff.pdb
+c:\users\anselmo fresquez\documents\visual studio 2013\Projects\Cool Stuff\Cool Stuff\obj\Debug\Cool Stuff.csprojResolveAssemblyReference.cache
+c:\users\anselmo fresquez\documents\visual studio 2013\Projects\Cool Stuff\Cool Stuff\obj\Debug\Cool_Stuff.MainForm.resources
+c:\users\anselmo fresquez\documents\visual studio 2013\Projects\Cool Stuff\Cool Stuff\obj\Debug\Cool_Stuff.Properties.Resources.resources
+c:\users\anselmo fresquez\documents\visual studio 2013\Projects\Cool Stuff\Cool Stuff\obj\Debug\Cool Stuff.csproj.GenerateResource.Cache
+c:\users\anselmo fresquez\documents\visual studio 2013\Projects\Cool Stuff\Cool Stuff\obj\Debug\Cool Stuff.exe
+c:\users\anselmo fresquez\documents\visual studio 2013\Projects\Cool Stuff\Cool Stuff\obj\Debug\Cool Stuff.pdb
