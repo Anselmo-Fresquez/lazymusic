@@ -12,6 +12,7 @@ using System.Data.SqlClient;
 
 namespace Cool_Stuff {
     public partial class MainForm : Form {
+
         public MainForm () {
             InitializeComponent();
         }
@@ -32,13 +33,14 @@ namespace Cool_Stuff {
         }
 
         private void PopulateSongs () {
-            var query = String.Concat("SELECT song.Title FROM Song song ",
+            var query = String.Concat("SELECT * FROM Song song ",
                                        "INNER JOIN BandSong bandSong ON song.Id = bandSong.SongId ",
                                        "WHERE bandSong.BandId = @BandId;");
 
             using (SqlConnection connection = new SqlConnection(GetConnectionString()))
             using (SqlCommand command = new SqlCommand(query, connection))
             using (SqlDataAdapter adapter = new SqlDataAdapter(command)) {
+
                 command.Parameters.AddWithValue("@BandId", lstBands.SelectedValue);
 
                 DataTable songTable = new DataTable();
@@ -75,39 +77,11 @@ namespace Cool_Stuff {
             PopulateBands();
         }
 
-        private void lstBands_DoubleClick (object sender, EventArgs e) {
-            
-        }
-
-        private void btnClearBandName_Click (object sender, EventArgs e) {
-            txtBandName.Text = "";
-        }
-
-        private void btnDeleteBand_Click (object sender, EventArgs e) {
-            DialogResult result = MessageBox.Show(
-                "Are you sure you wanna delete that band?", 
-                "Confirm Band Deletion", 
-                MessageBoxButtons.YesNoCancel,
-                MessageBoxIcon.Information
-            );
-
-            if (result == DialogResult.No) {
-                return;
-            }
-
-            string query = "DELETE FROM Band WHERE Id = @BandId";
-
-            using (SqlConnection connection = new SqlConnection(GetConnectionString()))
-            using (SqlCommand command = new SqlCommand(query, connection)) {
-                connection.Open();
-                command.Parameters.AddWithValue("@BandId", lstBands.SelectedValue);
-                command.ExecuteNonQuery();
-            }
-
-            PopulateBands(); 
-        }
-
         private void btnAddSongTitle_Click (object sender, EventArgs e) {
+            AddSongTitle();
+        }
+
+        void AddSongTitle () {
             int newSongId = 0;
 
             if (txtSongName.Text == "") {
@@ -140,6 +114,10 @@ namespace Cool_Stuff {
             PopulateSongs();
         }
 
+        private void btnClearBandName_Click (object sender, EventArgs e) {
+            txtBandName.Text = "";
+        }
+
         private void btnRename_Click (object sender, EventArgs e) {
             string newBandName = Microsoft.VisualBasic.Interaction.InputBox(
                 "Please enter a new name for the selected band",
@@ -164,16 +142,43 @@ namespace Cool_Stuff {
             PopulateBands();
         }
 
-        private void lstSongs_MouseDoubleClick (object sender, MouseEventArgs e) {
-            string bandName = lstBands.GetItemText(lstBands.SelectedItem).TrimEnd();
-            string songName = lstSongs.GetItemText(lstSongs.SelectedItem).TrimEnd();
+        private void btnRenameSong_Click (object sender, EventArgs e) {
+            string newSongTitle = Microsoft.VisualBasic.Interaction.InputBox(
+                "Please enter a new name for the selected song",
+                "Rename Song",
+                lstSongs.GetItemText(lstSongs.SelectedItem).TrimEnd()
+                );
 
-            System.Diagnostics.Process.Start(
-                "https://www.google.com/#safe=active&q=" + bandName + " " + songName
-            );
+            if (newSongTitle == "") {
+                return;
+            }
+
+            string query = "UPDATE Song SET Title = @SongTitle WHERE Id = @SongId";
+
+            using (SqlConnection connection = new SqlConnection(GetConnectionString()))
+            using (SqlCommand command = new SqlCommand(query, connection)) {
+                connection.Open();
+                command.Parameters.AddWithValue("@SongTitle", newSongTitle);
+                command.Parameters.AddWithValue("@SongId", lstSongs.SelectedValue);
+                command.ExecuteNonQuery();
+            }
+
+            PopulateSongs();
+        }
+
+        private void lstSongs_MouseDoubleClick (object sender, MouseEventArgs e) {
+            GoogleSong();
+        }
+
+        private void lstBands_DoubleClick (object sender, EventArgs e) {
+            MessageBox.Show(lstBands.SelectedValue.ToString());
         }
 
         private void button1_Click (object sender, EventArgs e) {
+            GoogleSong();
+        }
+
+        private void GoogleSong () {
             string bandName = lstBands.GetItemText(lstBands.SelectedItem).TrimEnd();
             string songName = lstSongs.GetItemText(lstSongs.SelectedItem).TrimEnd();
 
@@ -183,11 +188,78 @@ namespace Cool_Stuff {
         }
 
         private void lstSongs_SelectedIndexChanged (object sender, EventArgs e) {
+            
+        }
 
+        private void btnDeleteBand_Click (object sender, EventArgs e) {
+            DialogResult result = MessageBox.Show(
+                "Are you sure you wanna delete that band?",
+                "Confirm Band Deletion",
+                MessageBoxButtons.YesNoCancel,
+                MessageBoxIcon.Information
+            );
+
+            if (result == DialogResult.No) {
+                return;
+            }
+
+            string query = "DELETE FROM Band WHERE Id = @BandId";
+
+            using (SqlConnection connection = new SqlConnection(GetConnectionString()))
+            using (SqlCommand command = new SqlCommand(query, connection)) {
+                connection.Open();
+                command.Parameters.AddWithValue("@BandId", lstBands.SelectedValue);
+                command.ExecuteNonQuery();
+            }
+
+            PopulateBands();
         }
 
         private void btnDeleteSong_Click (object sender, EventArgs e) {
+            DeleteSelectedSong();
+        }
 
+        private void DeleteSelectedSong () {
+            DialogResult result = MessageBox.Show(
+                "Are you sure you wanna delete that song?",
+                "Confirm Song Deletion",
+                MessageBoxButtons.YesNoCancel,
+                MessageBoxIcon.Information
+            );
+
+            if (result == DialogResult.No) {
+                return;
+            }
+
+            string query = "DELETE FROM BandSong WHERE BandId = @BandId AND SongId = @SongId";
+
+            using (SqlConnection connection = new SqlConnection(GetConnectionString()))
+            using (SqlCommand command = new SqlCommand(query, connection)) {
+                connection.Open();
+                command.Parameters.AddWithValue("@BandId", lstBands.SelectedValue);
+                command.Parameters.AddWithValue("@SongId", lstSongs.SelectedValue);
+                command.ExecuteNonQuery();
+            }
+
+            PopulateSongs();
+        }
+
+        private void txtSongName_TextChanged (object sender, EventArgs e) {
+
+        }
+
+        private void txtSongName_KeyDown (object sender, KeyEventArgs e) {
+            if (e.KeyCode == Keys.Enter) {
+                AddSongTitle();
+            }
+        }
+
+        private void btnClearSongName_Click (object sender, EventArgs e) {
+            txtSongName.Text = "";
+        }
+
+        private void lstSongs_KeyDown (object sender, KeyEventArgs e) {
+            GoogleSong();
         }
     }
 }

@@ -80,6 +80,7 @@
             this.lstSongs.Size = new System.Drawing.Size(418, 306);
             this.lstSongs.TabIndex = 2;
             this.lstSongs.SelectedIndexChanged += new System.EventHandler(this.lstSongs_SelectedIndexChanged);
+            this.lstSongs.KeyDown += new System.Windows.Forms.KeyEventHandler(this.lstSongs_KeyDown);
             this.lstSongs.MouseDoubleClick += new System.Windows.Forms.MouseEventHandler(this.lstSongs_MouseDoubleClick);
             // 
             // lblSongs
@@ -144,6 +145,7 @@
             this.btnClearSongName.TabIndex = 12;
             this.btnClearSongName.Text = "Clear";
             this.btnClearSongName.UseVisualStyleBackColor = false;
+            this.btnClearSongName.Click += new System.EventHandler(this.btnClearSongName_Click);
             // 
             // btnAddSongTitle
             // 
@@ -174,6 +176,8 @@
             this.txtSongName.Name = "txtSongName";
             this.txtSongName.Size = new System.Drawing.Size(335, 22);
             this.txtSongName.TabIndex = 9;
+            this.txtSongName.TextChanged += new System.EventHandler(this.txtSongName_TextChanged);
+            this.txtSongName.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtSongName_KeyDown);
             // 
             // btnDeleteBand
             // 
@@ -237,6 +241,7 @@
             this.btnRenameSong.TabIndex = 19;
             this.btnRenameSong.Text = "Rename ";
             this.btnRenameSong.UseVisualStyleBackColor = false;
+            this.btnRenameSong.Click += new System.EventHandler(this.btnRenameSong_Click);
             // 
             // btnDeleteSong
             // 
